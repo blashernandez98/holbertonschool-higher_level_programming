@@ -2,11 +2,11 @@
 if (__name__ == '__main__'):
     from calculator_1 import *
     import sys
+    argv = sys.argv
+    argc = len(argv)
     if (argc != 4):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         quit(1)
-    argv = sys.argv
-    argc = len(argv)
     a = int(argv[1])
     b = int(argv[3])
     operators = [["+", add], ["-", sub], ["*", mul], ["/", div]]
