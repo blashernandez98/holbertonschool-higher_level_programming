@@ -3,6 +3,7 @@
 
 def best_score(dic):
     score = 0
+    key_candidate = None
 
     if dic is not None:
 
@@ -11,7 +12,4 @@ def best_score(dic):
                 key_candidate = key
                 score = value
 
-        return key_candidate
-
-    else:
-        return None
+    return key_candidate
