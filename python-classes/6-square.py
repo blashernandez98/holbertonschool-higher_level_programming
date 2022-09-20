@@ -17,15 +17,12 @@ def int_check(value):
 
 
 def int_tuple_check(tup):
-    res = True
-    if (type(tup) != tuple):
-        res = False
+    if (type(tup) != tuple or len(tup) != 2):
+        return False
     for i in range(0, 2):
         if (type(tup[i]) != int or tup[i] < 0):
-            res = False
-    if (res is False):
-        raise TypeError("position must be a tuple of 2 positive integers")
-    return res
+            return False
+    return True
 
 
 """ Square class representing a square """
@@ -38,6 +35,8 @@ class Square():
             self.__size = size
         if (int_tuple_check(position)):
             self.__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     @property
     def size(self):
@@ -56,6 +55,8 @@ class Square():
     def position(self, position):
         if (int_tuple_check(position)):
             self.__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         return self.__size ** 2
@@ -65,6 +66,7 @@ class Square():
         if not size:
             print()
             return
+        print("\n"*self.__position[1], end="")
         for i in range(size):
             print(" "*self.__position[0], end="")
             for i in range(size):
