@@ -1,0 +1,23 @@
+>>> from 0-add_integer import add_integer
+
+>>> add_integer(5)
+94
+>>> add_integer(41, 2)
+43
+>>> add_integer(5, "string")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+>>> add_integer("string", 43)
+Traceback (most recent call last):
+        ...
+TypeError: a must be an integer
+>>> add_integer()
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+>>> add_integer(1e100, 1e100)
+Traceback (most recent call last):
+	...
+OverflowError: numbers too large
