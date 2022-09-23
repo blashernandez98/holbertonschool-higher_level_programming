@@ -3,7 +3,6 @@
 >>> text_indentation(" Hola. capo")
 Hola.
 <BLANKLINE>
-<BLANKLINE>
 capo
 
 >>> text_indentation(43)
