@@ -21,6 +21,6 @@ def text_indentation(text):
         print(letter, end="")
 
         if letter in separators:
-            print('\n' * 2)
+            print('\n' * 2, end="")
             new_l = True
             continue
