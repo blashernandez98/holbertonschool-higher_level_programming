@@ -32,7 +32,7 @@ class Rectangle:
     def height(self, value):
 
         int_check(value, "height")
-        self.__width = value
+        self.__height = value
 
     def __init__(self, width=0, height=0):
 
