@@ -2,16 +2,17 @@
 """ Task 1 module  """
 
 
+def int_check(value, var_name):
+    """ Type and value check for integers  """
+
+    if type(value) is not int:
+        raise TypeError(var_name + " must be an integer")
+    if value < 0:
+        raise ValueError(var_name + " must be >= 0")
+
+
 class Rectangle:
     """ Rectangle class  """
-
-    @staticmethod
-    def int_check(value, var_name):
-
-        if type(value) is not int:
-            raise TypeError(var_name + " must be an integer")
-        if value < 0:
-            raise ValueError(var_name + " must be >= 0")
 
     @property
     def width(self):
