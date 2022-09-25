@@ -14,7 +14,7 @@ def int_check(value, var_name):
 def rectangle_check(obj, var_name):
 
     if type(obj) != Rectangle:
-        raise TypeError(f'{var_name} must be a an instance of Rectangle')
+        raise TypeError(f'{var_name} must be an instance of Rectangle')
 
 
 class Rectangle:
