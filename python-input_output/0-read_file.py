@@ -3,6 +3,7 @@
 
 
 def read_file(filename=""):
+    """ read_file function that prints file """
 
     with open(filename, encoding="utf-8") as f:
 
