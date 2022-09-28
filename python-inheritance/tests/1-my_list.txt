@@ -1,0 +1,15 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> example_list = MyList()
+
+>>> example_list.print_sorted()
+None
+
+>>> example_list.append(43)
+>>> example_list.append(22)
+>>> example_list.append(41)
+
+>>> example_list.print_sorted()
+[22, 41, 43]
+
+
