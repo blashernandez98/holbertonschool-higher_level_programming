@@ -3,6 +3,7 @@
 
 
 def to_json_string(my_obj):
+    """ to_json_string function that converts obj to json string """
 
     import json
 
