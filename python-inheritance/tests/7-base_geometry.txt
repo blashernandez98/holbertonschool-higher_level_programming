@@ -16,6 +16,26 @@ ValueError: n must be greater than 0
 Traceback (most recent call last):
 TypeError: n must be an integer
 
+>>> obj.integer_validator("n", (43,))
+Traceback (most recent call last):
+TypeError: n must be an integer
+
+>>> obj.integer_validator("n", [43])
+Traceback (most recent call last):
+TypeError: n must be an integer
+
+>>> obj.integer_validator("n", True)
+Traceback (most recent call last):
+TypeError: n must be an integer
+
+>>> obj.integer_validator("n", [41, 43])
+Traceback (most recent call last):
+TypeError: n must be an integer
+
+>>> obj.integer_validator("n", None)
+Traceback (most recent call last):
+TypeError: n must be an integer
+
 >>> obj.integer_validator("n")
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
