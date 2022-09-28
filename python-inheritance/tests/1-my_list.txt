@@ -12,4 +12,10 @@
 >>> example_list.print_sorted()
 [22, 41, 43]
 
+>>> example_list.append(-43)
+>>> example_list.append(-1)
+>>> example_list.print_sorted()
+[-43, -1, 21, 41, 43]
 
+>>> print(example_list)
+[43, 22, 41, -43, -1]
