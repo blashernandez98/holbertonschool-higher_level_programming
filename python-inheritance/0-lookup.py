@@ -3,5 +3,6 @@
 
 
 def lookup(obj):
+    """ Lookup func  """
 
     return list(dir(obj))
