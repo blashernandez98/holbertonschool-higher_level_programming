@@ -2,7 +2,7 @@
 """ Task 5 module """
 
 
-def save_to_json(my_obj, filename):
+def save_to_json_file(my_obj, filename):
     """ Function that writes JSON representation of object to file """
 
     import json
