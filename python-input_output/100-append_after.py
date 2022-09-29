@@ -3,6 +3,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """ inserts new_string after every occurance of search_string """
 
     output = ""
 
