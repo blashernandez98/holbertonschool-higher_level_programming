@@ -80,15 +80,12 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ Update function updates attributes for Rectangle instance """
         if len(args) == 0:
-
             attr = ["id", "width", "height", "x", "y"]
 
             for key, value in kwargs.items():
                 if key in attr:
                     setattr(self, key, value)
-
         else:
-
             try:
                 self.id = args[0]
                 self.width = args[1]
@@ -97,3 +94,15 @@ class Rectangle(Base):
                 self.y = args[4]
             except Exception:
                 pass
+
+    def to_dictionary(self):
+        """ Returns dictionary representation of Rectangle instance """
+        dic = self.__dict__
+        new_dic = {}
+        for key, value in dic.items():
+            if key == 'id':
+                new_dic[key] = value
+            else:
+                n_key = key[12:]
+                new_dic[n_key] = value
+        return new_dic
