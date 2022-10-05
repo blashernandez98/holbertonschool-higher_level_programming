@@ -44,7 +44,7 @@ class Rectangle(Base):
         self.__y = value
 
     def __init__(self, width, height, x=0, y=0, id=None):
-
+        """ Instantation function """
         super().__init__(id)
         size_check(width, "width")
         size_check(height, "height")
@@ -56,11 +56,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-
+        """ Function that returns area of rectangle """
         return self.width * self.height
 
     def display(self):
-
+        """ Function that prints rectangle to stdout """
         print('\n'*self.y, end="")
         for i in range(self.height):
             print(' '*self.x, end="")
@@ -69,7 +69,7 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-
+        """ Custom str method for Rectangle """
         out = "[Rectangle] "
         out += f"({self.id}) "
         out += f"{self.x}/{self.y} - "
@@ -78,7 +78,7 @@ class Rectangle(Base):
         return out
 
     def update(self, *args):
-
+        """ Update function updates attributes for Rectangle instance """
         try:
             self.id = args[0]
             self.width = args[1]
