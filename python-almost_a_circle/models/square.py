@@ -51,7 +51,7 @@ class Square(Rectangle):
             pass
 
     def to_dictionary(self):
-
+        """ To dictionary method """
         dic = {
             "id": self.id,
             "size": self.size,
