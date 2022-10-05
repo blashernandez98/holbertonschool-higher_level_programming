@@ -28,11 +28,13 @@ class Base():
     @classmethod
     def save_to_file(cls, list_obj):
         """ Saves list of objects to file as json string """
-        cls_name = "undefined"
+        if "Square" in f"{cls}":
+            cls_name = "Square"
+        if "Rectangle" in f"{cls}":
+            cls_name = "Rectangle"
         if list_obj is None:
             string = "[]"
         else:
-            cls_name = type(list_obj[0]).__name__
             dictionaries = list(map(lambda x: x.to_dictionary(), list_obj))
             string = Base.to_json_string(dictionaries)
 
