@@ -77,13 +77,23 @@ class Rectangle(Base):
 
         return out
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Update function updates attributes for Rectangle instance """
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except Exception:
-            pass
+        if len(args) == 0:
+
+            attr = ["id", "width", "height", "x", "y"]
+
+            for key, value in kwargs.items():
+                if key in attr:
+                    setattr(self, key, value)
+
+        else:
+
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except Exception:
+                pass
