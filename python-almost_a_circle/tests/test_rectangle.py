@@ -18,3 +18,15 @@ class testRectangleClass(unittest.TestCase):
         self.assertEqual(r1.y, 4)
         self.assertEqual(r1.area(), 2)
         self.assertEqual(r1.__str__(), "[Rectangle] (43) 3/4 - 1/2")
+
+    def test_rectangle_errors(self):
+        self.assertRaises(TypeError, Rectangle, "1", 2)
+        self.assertRaises(TypeError, Rectangle, 1, "2")
+        self.assertRaises(TypeError, Rectangle, 1, 2, "43")
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3, "43")
+        self.assertRaises(ValueError, Rectangle, -1, 2)
+        self.assertRaises(ValueError, Rectangle, 1, -2)
+        self.assertRaises(ValueError, Rectangle, 0, 2)
+        self.assertRaises(ValueError, Rectangle, 1, 0)
+        self.assertRaises(ValueError, Rectangle, 1, 2, -3)
+        self.assertRaises(ValueError, Rectangle, 1, 2, 3, -4)
