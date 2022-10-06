@@ -2,6 +2,8 @@
 """ Rectangle class test module """
 import unittest
 from models.rectangle import Rectangle
+from io import StringIO
+import sys
 
 
 class testRectangleClass(unittest.TestCase):
@@ -30,3 +32,11 @@ class testRectangleClass(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, 1, 0)
         self.assertRaises(ValueError, Rectangle, 1, 2, -3)
         self.assertRaises(ValueError, Rectangle, 1, 2, 3, -4)
+
+    def test_rectangle_display(self):
+        captured_out = StringIO()
+        sys.stdout = captured_out
+        r_no_pos = Rectangle(1, 1)
+        r_no_pos.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_out.getvalue(), '#\n')
