@@ -30,6 +30,11 @@ class testSquareClass(unittest.TestCase):
         s1.update(89, 1, 2, 3)
         self.assertEqual(s1.id, 89)
 
+    def test_square_create(self):
+        dic = {'id': 89, 'size': 1, 'x': 2, 'y': 3}
+        s1 = Square.create(**dic)
+        self.assertEqual(s1.id, 89)
+
     def test_square_errors(self):
         self.assertRaises(TypeError, Square, "1")
         self.assertRaises(TypeError, Square, 1, "1")
