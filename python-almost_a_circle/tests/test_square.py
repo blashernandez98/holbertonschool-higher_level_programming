@@ -18,6 +18,18 @@ class testSquareClass(unittest.TestCase):
         s1 = Square(1, 2, 3, 4)
         self.assertEqual(s1.id, 4)
 
+    def test_square_1(self):
+        s1 = Square(1, 0, 0, 43)
+        self.assertEqual(s1.__str__(), '[Square] (43) 0/0 - 1')
+
+        dic = {"id": 43, "size": 1, "x": 0, "y": 0}
+        self.assertEqual(s1.to_dictionary(), dic)
+
+    def test_square_update(self):
+        s1 = Square(1)
+        s1.update(89, 1, 2, 3)
+        self.assertEqual(s1.id, 89)
+
     def test_square_errors(self):
         self.assertRaises(TypeError, Square, "1")
         self.assertRaises(TypeError, Square, 1, "1")
