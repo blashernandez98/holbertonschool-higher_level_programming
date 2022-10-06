@@ -15,13 +15,14 @@ class testSquareClass(unittest.TestCase):
         self.assertEqual(s1.x, 2)
         s1 = Square(1, 2, 3)
         self.assertEqual(s1.y, 3)
+        s1 = Square(1, 2, 3, 4)
+        self.assertEqual(s1.id, 4)
 
     def test_square_errors(self):
         self.assertRaises(TypeError, Square, "1")
         self.assertRaises(TypeError, Square, 1, "1")
         self.assertRaises(TypeError, Square, 1, 1, "1")
-        self.assertRaises(TypeError, Square, 1, 2, 3, 4)
-        self.assertRaises(TypeError, Square, -1)
-        self.assertRaises(TypeError, Square, 1, -1)
-        self.assertRaises(TypeError, Square, 1, 1, -43)
+        self.assertRaises(ValueError, Square, -1)
+        self.assertRaises(ValueError, Square, 1, -1)
+        self.assertRaises(ValueError, Square, 1, 1, -43)
         self.assertRaises(ValueError, Square, 0)
