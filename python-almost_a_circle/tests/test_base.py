@@ -4,9 +4,9 @@ import unittest
 from models.base import Base
 
 
-class TestBaseClass(unittest.TestCase):
+class testBaseClass(unittest.TestCase):
     """ TestBase class """
 
     def test_id(self):
-        base = Base()
-        self.assertEqual(base.id, 1)
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
