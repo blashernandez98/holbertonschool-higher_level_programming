@@ -3,10 +3,15 @@
 
 from models.square import Square
 import unittest
+import os
 
 
 class testSquareClass(unittest.TestCase):
     """ Test Square class """
+
+    def set_up(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
 
     def test_square_0(self):
         s1 = Square(1)
@@ -34,6 +39,22 @@ class testSquareClass(unittest.TestCase):
         dic = {'id': 89, 'size': 1, 'x': 2, 'y': 3}
         s1 = Square.create(**dic)
         self.assertEqual(s1.id, 89)
+
+    def test_square_save_0(self):
+        Square.save_to_file(None)
+        with open("Square.json") as f:
+            self.assertEqual(f.read(), '[]')
+
+    def test_square_save_1(self):
+        Square.save_to_file([])
+        with open("Square.json") as f:
+            self.assertEqual(f.read(), '[]')
+
+    def test_square_save_2(self):
+        Square.save_to_file([Square(1, 0, 0, 43)])
+        expected = '[{"id": 43, "size": 1, "x": 0, "y": 0}]'
+        with open("Square.json") as f:
+            self.assertEqual(f.read(), expected)
 
     def test_square_errors(self):
         self.assertRaises(TypeError, Square, "1")
