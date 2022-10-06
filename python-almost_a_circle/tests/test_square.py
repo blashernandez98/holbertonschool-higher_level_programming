@@ -56,6 +56,17 @@ class testSquareClass(unittest.TestCase):
         with open("Square.json") as f:
             self.assertEqual(f.read(), expected)
 
+    def test_squate_load_0(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        s1 = Square.load_from_file()
+        self.assertEqual(s1, [])
+
+    def test_square_load_1(self):
+        Square.save_to_file([Square(1, 0, 0, 43)])
+        s1 = Square.load_from_file()
+        self.assertEqual(s1[0].id, 43)
+
     def test_square_errors(self):
         self.assertRaises(TypeError, Square, "1")
         self.assertRaises(TypeError, Square, 1, "1")
