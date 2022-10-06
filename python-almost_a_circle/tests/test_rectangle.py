@@ -20,14 +20,24 @@ class testRectangleClass(unittest.TestCase):
         self.assertEqual(r1.y, 4)
         self.assertEqual(r1.area(), 2)
         self.assertEqual(r1.__str__(), "[Rectangle] (43) 3/4 - 1/2")
-        self.assertEqual(r1.to_dictionary(), {'id': 43, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        dic = {'id': 43, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
+        self.assertEqual(r1.to_dictionary(), dic)
 
-    def test_rectangle_methods(self):
+    def test_rectangle_update(self):
         r1 = Rectangle(2, 2)
         r1.update()
         self.assertEqual(r1.width, 2)
         self.assertEqual(r1.height, 2)
         r1.update(89, 1, 2, 3, 4)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+
+    def test_rectangle_create(self):
+        dic = {'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
+        r1 = Rectangle.create(**dic)
         self.assertEqual(r1.id, 89)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
