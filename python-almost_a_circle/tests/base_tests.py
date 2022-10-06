@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 
+
 class TestBaseClass(unittest.TestCase):
     """ TestBase class """
 
@@ -10,4 +11,4 @@ class TestBaseClass(unittest.TestCase):
         self.base = Base()
 
     def test_id(self):
-        self.assertEqual(str(type(self.base)), "<class 'models.base.Base'>")
+        self.assertEqual(self.base.id, 1)
