@@ -40,3 +40,9 @@ class Base():
 
         with open(f"{cls_name}.json", 'w', encoding="utf-8") as f:
             f.write(string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        return json.loads(json_string)
