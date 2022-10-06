@@ -51,9 +51,9 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """ Creates instance of cls using dictionary """
-        if cls.__name__ == 'Rectangle':
+        if 'Rectangle' in f"{cls}":
             dummy = cls(1, 1)
-        else if cls.__name__ == 'Square':
+        elif 'Square' in f"{cls}":
             dummy = cls(1)
         else:
             return None
