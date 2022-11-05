@@ -1,0 +1,1 @@
+# This directory contains the tasks for the "SQL - introduction" project at Holberton School.
