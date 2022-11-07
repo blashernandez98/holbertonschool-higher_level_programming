@@ -1,0 +1,1 @@
+# This directory contains all the tasks for the "Python - object relational mapping" project at Holberton School.
