@@ -15,9 +15,9 @@ if len(args) == 5:
     cur = db.cursor()
     cur.execute(
         "SELECT * FROM states\
-        WHERE name = \"{}\"\
-        ORDER BY id".format(state)
+        ORDER BY id"
     )
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == state:
+            print(row)
