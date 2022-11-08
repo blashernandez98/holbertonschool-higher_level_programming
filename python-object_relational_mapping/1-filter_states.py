@@ -13,7 +13,7 @@ if len(args) == 4:
 
     db = MySQLdb.connect(host='localhost', user=user, passwd=passwd, db=datab)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id DESC")
+    cur.execute("SELECT * FROM states WHERE name REGEXP '^[N].*$' ORDER BY id DESC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
