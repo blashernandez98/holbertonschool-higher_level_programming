@@ -5,6 +5,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from model_state import Base, State
+
 import sys
 
 if __name__ == "__main__":
@@ -17,9 +18,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(State.name.contains('a')).all()
+    states = session.query(State).filter(State.name.like("%a%"))
 
     for state in states:
         if 'a' in state.name:
             session.delete(state)
-            session.commit()
+    session.commit()
