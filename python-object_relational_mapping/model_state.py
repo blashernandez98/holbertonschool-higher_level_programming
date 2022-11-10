@@ -7,7 +7,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class SomeClass(Base):
+class State(Base):
+    """ State class definition """
     __tablename__ = 'states'
     id = Column(
         Integer, primary_key=True,
