@@ -1,0 +1,1 @@
+# This folder contains the tasks for the "Javascript warm-up" project at Holberton School
