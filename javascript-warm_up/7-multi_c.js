@@ -6,6 +6,6 @@ if (isNaN(arg)) {
   console.log('Missing number of occurrences');
 }
 
-while (arg--) {
+while (arg-- > 0) {
   console.log('C is fun');
 }
