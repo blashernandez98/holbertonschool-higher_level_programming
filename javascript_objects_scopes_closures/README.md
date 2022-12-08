@@ -1,0 +1,1 @@
+# This directory contains the tasks for the "javascript_objects_scopes_closures" project at Holberton School.
