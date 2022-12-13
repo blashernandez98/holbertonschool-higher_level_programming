@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const urlPath = process.argv[2];
-const searchCharacter = 'https://swapi-api.hbtn.io/api/people/18/';
 const request = require('request');
 let count = 0;
 
@@ -10,9 +9,11 @@ request(urlPath, function (err, res, body) {
 
   const movies = JSON.parse(body);
   movies.results.forEach(movie => {
-    if (movie.characters.includes(searchCharacter)) {
-      count++;
-    }
+    movie.characters.forEach(character => {
+      if (character.includes('18')) {
+        count++;
+      }
+    });
   });
 
   console.log(count);
