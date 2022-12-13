@@ -1,0 +1,1 @@
+# This directory contains the tasks for the "Javascript web scraping" project at Holberton School.
